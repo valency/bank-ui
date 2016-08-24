@@ -1,13 +1,29 @@
 $(document).ready(function () {
     $(".nav a[href='cust.php']").parent().addClass("active");
-    draw_chart_credit_card_count();
+    draw_chart_credit_card_count("chart-credit-card-count", data_credit_card_count);
+    draw_bar_chart("chart-age-dist", data_age_dist, {
+        category: "age",
+        value: "count"
+    });
+    draw_pie_chart("chart-client-place", data_client_place, {
+        category: "place",
+        value: "count"
+    });
+    draw_bar_chart("chart-daily-savings-dist", data_daily_savings_dist, {
+        category: "savings",
+        value: "count"
+    });
+    draw_line_chart("chart-member-year-vs-daily-savings", data_member_year_vs_daily_savings, {
+        category: "year",
+        value: "savings"
+    });
 });
 
-function draw_chart_credit_card_count() {
-    AmCharts.makeChart("chart-credit-card-count", {
+function draw_chart_credit_card_count(div, data) {
+    AmCharts.makeChart(div, {
         "type": "serial",
         "theme": "light",
-        "categoryField": "year",
+        "categoryField": "credit_card_type",
         "rotate": true,
         "startDuration": 1,
         "categoryAxis": {
@@ -15,64 +31,30 @@ function draw_chart_credit_card_count() {
             "position": "left"
         },
         "trendLines": [],
-        "graphs": [
-            {
-                "balloonText": "Income:[[value]]",
-                "fillAlphas": 0.8,
-                "id": "AmGraph-1",
-                "lineAlpha": 0.2,
-                "title": "Income",
-                "type": "column",
-                "valueField": "income"
-            },
-            {
-                "balloonText": "Expenses:[[value]]",
-                "fillAlphas": 0.8,
-                "id": "AmGraph-2",
-                "lineAlpha": 0.2,
-                "title": "Expenses",
-                "type": "column",
-                "valueField": "expenses"
-            }
-        ],
+        "graphs": [{
+            "balloonText": "Hold: [[value]]",
+            "fillAlphas": 0.8,
+            "lineAlpha": 0.2,
+            "title": "Hold",
+            "type": "column",
+            "valueField": "hold"
+        }, {
+            "balloonText": "Canceled: [[value]]",
+            "fillAlphas": 0.8,
+            "lineAlpha": 0.2,
+            "title": "Canceled",
+            "type": "column",
+            "valueField": "canceled"
+        }],
         "guides": [],
-        "valueAxes": [
-            {
-                "id": "ValueAxis-1",
-                "position": "top",
-                "axisAlpha": 0
-            }
-        ],
+        "valueAxes": [{
+            "position": "top",
+            "axisAlpha": 0
+        }],
         "allLabels": [],
         "balloon": {},
         "titles": [],
-        "dataProvider": [
-            {
-                "year": 2005,
-                "income": 23.5,
-                "expenses": 18.1
-            },
-            {
-                "year": 2006,
-                "income": 26.2,
-                "expenses": 22.8
-            },
-            {
-                "year": 2007,
-                "income": 30.1,
-                "expenses": 23.9
-            },
-            {
-                "year": 2008,
-                "income": 29.5,
-                "expenses": 25.1
-            },
-            {
-                "year": 2009,
-                "income": 24.6,
-                "expenses": 25
-            }
-        ]
+        "dataProvider": data
     });
     $("a[title='JavaScript charts']").remove();
 }

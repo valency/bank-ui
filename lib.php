@@ -13,4 +13,8 @@
 <script type="text/javascript" src="lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="lib/amcharts-3.20.12/amcharts/amcharts.js"></script>
 <script type="text/javascript" src="lib/amcharts-3.20.12/amcharts/serial.js"></script>
+<script type="text/javascript" src="lib/amcharts-3.20.12/amcharts/pie.js"></script>
 <script type="text/javascript" src="lib/amcharts-3.20.12/amcharts/themes/light.js"></script>
+
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/figure.js"></script>
