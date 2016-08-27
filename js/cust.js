@@ -1,6 +1,11 @@
 $(document).ready(function () {
     $(".nav a[href='cust.php']").parent().addClass("active");
-    draw_chart_credit_card_count("chart-credit-card-count", data_credit_card_count);
+    $.post(API_SERVER + "data/history/get/", {
+        id: API_LIST["credit_card_status_count"]
+    }, function (data) {
+        var data_credit_card_count = eval(data["result"]);
+        draw_chart_credit_card_count("chart-credit-card-count", data_credit_card_count);
+    });
     draw_bar_chart("chart-age-dist", data_age_dist, {
         category: "age",
         value: "count"
@@ -23,7 +28,7 @@ function draw_chart_credit_card_count(div, data) {
     AmCharts.makeChart(div, {
         "type": "serial",
         "theme": "light",
-        "categoryField": "credit_card_type",
+        "categoryField": 0,
         "rotate": true,
         "startDuration": 1,
         "categoryAxis": {
@@ -37,14 +42,14 @@ function draw_chart_credit_card_count(div, data) {
             "lineAlpha": 0.2,
             "title": "Hold",
             "type": "column",
-            "valueField": "hold"
+            "valueField": 1
         }, {
             "balloonText": "Canceled: [[value]]",
             "fillAlphas": 0.8,
             "lineAlpha": 0.2,
             "title": "Canceled",
             "type": "column",
-            "valueField": "canceled"
+            "valueField": 2
         }],
         "guides": [],
         "valueAxes": [{

@@ -1,21 +1,3 @@
-var data_credit_card_count = [{
-    credit_card_type: "City Card",
-    hold: 2354,
-    canceled: 238
-}, {
-    credit_card_type: "Dragon Card",
-    hold: 2944,
-    canceled: 357
-}, {
-    credit_card_type: "Fly Card",
-    hold: 1618,
-    canceled: 85
-}, {
-    credit_card_type: "World Card",
-    hold: 814,
-    canceled: 170
-}];
-
 var data_age_dist = [{
     age: "<20",
     count: 2025

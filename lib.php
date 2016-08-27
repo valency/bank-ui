@@ -17,4 +17,5 @@
 <script type="text/javascript" src="lib/amcharts-3.20.12/amcharts/themes/light.js"></script>
 
 <script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/settings.js"></script>
 <script type="text/javascript" src="js/figure.js"></script>
