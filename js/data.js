@@ -1,31 +1,3 @@
-var data_age_dist = [{
-    age: "<20",
-    count: 2025
-}, {
-    age: "20-30",
-    count: 1882
-}, {
-    age: "30-40",
-    count: 1809
-}, {
-    age: ">40",
-    count: 395
-}];
-
-var data_client_place = [{
-    place: "Foreign",
-    count: 17
-}, {
-    place: "Hong Kong",
-    count: 18
-}, {
-    place: "Macau",
-    count: 253
-}, {
-    place: "Mainland",
-    count: 45
-}];
-
 var data_daily_savings_dist = [{
     savings: "<1k",
     count: 177

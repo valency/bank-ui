@@ -1,18 +1,41 @@
 $(document).ready(function () {
     $(".nav a[href='cust.php']").parent().addClass("active");
     $.post(API_SERVER + "data/history/get/", {
-        id: API_LIST["credit_card_status_count"]
+        report: API_LIST["credit_card_count"],
+        conf: ""
     }, function (data) {
-        var data_credit_card_count = eval(data["result"]);
-        draw_chart_credit_card_count("chart-credit-card-count", data_credit_card_count);
+        draw_chart_credit_card_count("chart-credit-card-count", eval(data["result"]));
     });
-    draw_bar_chart("chart-age-dist", data_age_dist, {
-        category: "age",
-        value: "count"
+    $.post(API_SERVER + "data/history/get/", {
+        report: API_LIST["age_hist"],
+        conf: ""
+    }, function (data) {
+        data = eval(data["result"]);
+        draw_bar_chart("chart-age-dist", [{
+            age: "<30",
+            count: data[0][0]
+        }, {
+            age: "30-40",
+            count: data[0][1]
+        }, {
+            age: "40-50",
+            count: data[0][2]
+        }, {
+            age: ">50",
+            count: data[0][3]
+        }], {
+            category: "age",
+            value: "count"
+        });
     });
-    draw_pie_chart("chart-client-place", data_client_place, {
-        category: "place",
-        value: "count"
+    $.post(API_SERVER + "data/history/get/", {
+        report: API_LIST["residence"],
+        conf: ""
+    }, function (data) {
+        draw_pie_chart("chart-client-place", eval(data["result"]), {
+            category: 0,
+            value: 1
+        });
     });
     draw_bar_chart("chart-daily-savings-dist", data_daily_savings_dist, {
         category: "savings",

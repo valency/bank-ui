@@ -4,9 +4,14 @@ $(document).ready(function () {
         category: "age",
         value: "count"
     });
-    draw_pie_chart("chart-client-place", data_client_place, {
-        category: "place",
-        value: "count"
+    $.post(API_SERVER + "data/history/get/", {
+        report: API_LIST["residence"],
+        conf: ""
+    }, function (data) {
+        draw_pie_chart("chart-client-place", eval(data["result"]), {
+            category: 0,
+            value: 1
+        });
     });
     draw_bar_chart("chart-member-year", data_member_year, {
         category: "year",
