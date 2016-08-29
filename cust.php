@@ -45,19 +45,43 @@
         <div class="col-md-3">
             <div class="form-group">
                 <label class="control-label" for="input-cust-type">客户类型细分</label>
-                <input type="text" class="form-control" id="input-cust-type"/>
+                <select class="form-control" id="input-cust-type">
+                    <option value="">All</option>
+                    <option value="Foreign">Foreign</option>
+                    <option value="Hong Kong">Hong Kong</option>
+                    <option value="Macau">Macau</option>
+                    <option value="Mainland">Mainland</option>
+                </select>
             </div>
             <div class="form-group">
                 <label class="control-label" for="input-cust-age">年龄</label>
-                <input type="text" class="form-control" id="input-cust-age"/>
+                <select class="form-control" id="input-cust-age">
+                    <option value="">All</option>
+                    <option value="0,30">&lt; 30</option>
+                    <option value="30,40">30 - 40</option>
+                    <option value="40,50">40 - 50</option>
+                    <option value="50,200">&ge; 50</option>
+                </select>
             </div>
             <div class="form-group">
                 <label class="control-label" for="input-cust-member-year">账户持有时间（年）</label>
-                <input type="text" class="form-control" id="input-cust-member-year"/>
+                <select class="form-control" id="input-cust-member-year">
+                    <option value="">All</option>
+                    <option value="0,2">&lt; 2</option>
+                    <option value="2,10">2 - 10</option>
+                    <option value="10,20">10 - 20</option>
+                    <option value="20,200">&ge; 20</option>
+                </select>
             </div>
             <div class="form-group">
                 <label class="control-label" for="input-cust-daily-savings">日均存款（元）</label>
-                <input type="text" class="form-control" id="input-cust-daily-savings"/>
+                <select class="form-control" id="input-cust-daily-savings">
+                    <option value="">All</option>
+                    <option value="0,10000">&lt; 10k</option>
+                    <option value="10000,20000">10k - 20k</option>
+                    <option value="20000,30000">20k - 30k</option>
+                    <option value="30000,100000000">&ge; 30k</option>
+                </select>
             </div>
             <div class="form-group">
                 <div class="checkbox">

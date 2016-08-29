@@ -1,31 +1,3 @@
-var data_daily_savings_dist = [{
-    savings: "<1k",
-    count: 177
-}, {
-    savings: "~10k",
-    count: 1898
-}, {
-    savings: "~100k",
-    count: 253
-}, {
-    savings: ">100k",
-    count: 45
-}];
-
-var data_member_year_vs_daily_savings = [{
-    year: "<1y",
-    savings: 1734
-}, {
-    year: "1-10y",
-    savings: 1873
-}, {
-    year: "10-20y",
-    savings: 1964
-}, {
-    year: ">20y",
-    savings: 1980
-}];
-
 var data_fund = [{
     fund: "Fund A",
     amount: Math.floor(Math.random() * 1000000)

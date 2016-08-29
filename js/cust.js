@@ -37,13 +37,49 @@ $(document).ready(function () {
             value: 1
         });
     });
-    draw_bar_chart("chart-daily-savings-dist", data_daily_savings_dist, {
-        category: "savings",
-        value: "count"
+    $.post(API_SERVER + "data/history/get/", {
+        report: API_LIST["avg_saving_all_time"],
+        conf: ""
+    }, function (data) {
+        data = eval(data["result"]);
+        draw_bar_chart("chart-daily-savings-dist", [{
+            savings: "<10k",
+            count: data[0][0]
+        }, {
+            savings: "~20k",
+            count: data[0][1]
+        }, {
+            savings: "~30k",
+            count: data[0][2]
+        }, {
+            savings: ">30k",
+            count: data[0][3]
+        }], {
+            category: "savings",
+            value: "count"
+        });
     });
-    draw_line_chart("chart-member-year-vs-daily-savings", data_member_year_vs_daily_savings, {
-        category: "year",
-        value: "savings"
+    $.post(API_SERVER + "data/history/get/", {
+        report: API_LIST["year_savings"],
+        conf: ""
+    }, function (data) {
+        data = eval(data["result"]);
+        draw_line_chart("chart-member-year-vs-daily-savings", [{
+            year: "<2y",
+            savings: data[0][0].toFixed(2)
+        }, {
+            year: "2-10y",
+            savings: data[0][1].toFixed(2)
+        }, {
+            year: "10-20y",
+            savings: data[0][2].toFixed(2)
+        }, {
+            year: ">20y",
+            savings: data[0][3].toFixed(2)
+        }], {
+            category: "year",
+            value: "savings"
+        });
     });
 });
 
