@@ -31,12 +31,35 @@ $(document).ready(function () {
             value: 1
         });
     });
-    draw_bar_chart("chart-member-year", data_member_year, {
-        category: "year",
-        value: "count"
+    $.post(API_SERVER + "data/history/get/", {
+        report: API_LIST["years_registered"],
+        conf: ""
+    }, function (data) {
+        data = eval(data["result"]);
+        draw_bar_chart("chart-member-year", [{
+            year: "<1y",
+            count: data[0][0]
+        }, {
+            year: "1-10y",
+            count: data[0][1]
+        }, {
+            year: "10-20y",
+            count: data[0][2]
+        }, {
+            year: ">20y",
+            count: data[0][3]
+        }], {
+            category: "year",
+            value: "count"
+        });
     });
-    draw_pie_chart("chart-gender-dist", data_gender_dist, {
-        category: "gender",
-        value: "count"
+    $.post(API_SERVER + "data/history/get/", {
+        report: API_LIST["gender"],
+        conf: ""
+    }, function (data) {
+        draw_pie_chart("chart-gender-dist", eval(data["result"]), {
+            category: 0,
+            value: 1
+        });
     });
 });

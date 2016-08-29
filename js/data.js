@@ -103,24 +103,3 @@ var data_investment = [{
     metal: Math.floor(Math.random() * 1000000)
 }];
 
-var data_member_year = [{
-    year: "<1y",
-    count: 1734
-}, {
-    year: "1-10y",
-    count: 1873
-}, {
-    year: "10-20y",
-    count: 1964
-}, {
-    year: ">20y",
-    count: 1980
-}];
-
-var data_gender_dist = [{
-    gender: "M",
-    count: 1734
-}, {
-    gender: "F",
-    count: 1873
-}];

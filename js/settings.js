@@ -4,5 +4,7 @@ var API_LIST = {
     credit_card_count: "bank:model:credit_card_count",
     age_hist: "bank:model:age_hist",
     avg_saving_all_time: "bank:model:avg_saving_all_time",
-    year_savings: "bank:model:year_savings"
+    year_savings: "bank:model:year_savings",
+    years_registered: "bank:model:years_registered",
+    gender: "bank:model:gender"
 };

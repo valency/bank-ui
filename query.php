@@ -47,7 +47,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <pre>Total: 8197 Records <a class="pull-right" href="javascript:void(0)">下载数据</a></pre>
+                    <pre>Total: 1,000 Records <a class="pull-right" href="javascript:void(0)">下载数据</a></pre>
                 </div>
             </div>
         </div>
