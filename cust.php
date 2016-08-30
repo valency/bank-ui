@@ -67,10 +67,10 @@
                 <label class="control-label" for="input-cust-member-year">账户持有时间（年）</label>
                 <select class="form-control" id="input-cust-member-year">
                     <option value="">All</option>
-                    <option value="0,2">&lt; 2</option>
-                    <option value="2,10">2 - 10</option>
+                    <option value="0,10">&lt; 10</option>
                     <option value="10,20">10 - 20</option>
-                    <option value="20,200">&ge; 20</option>
+                    <option value="20,30">20 - 30</option>
+                    <option value="30,200">&ge; 30</option>
                 </select>
             </div>
             <div class="form-group">
@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">刷新统计信息</button>
+                <button type="submit" class="btn btn-primary" onclick="draw_figures();">刷新统计信息</button>
             </div>
         </div>
     </div>

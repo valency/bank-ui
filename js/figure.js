@@ -1,4 +1,5 @@
 function draw_bar_chart(div, data, label) {
+    $("#" + div).html("");
     AmCharts.makeChart(div, {
         "type": "serial",
         "theme": "light",
@@ -34,6 +35,7 @@ function draw_bar_chart(div, data, label) {
 }
 
 function draw_pie_chart(div, data, label) {
+    $("#" + div).html("");
     AmCharts.makeChart(div, {
         "type": "pie",
         "theme": "light",
@@ -51,6 +53,7 @@ function draw_pie_chart(div, data, label) {
 }
 
 function draw_line_chart(div, data, label) {
+    $("#" + div).html("");
     AmCharts.makeChart(div, {
         "type": "serial",
         "theme": "light",
@@ -87,6 +90,7 @@ function draw_line_chart(div, data, label) {
 }
 
 function draw_multi_line_chart(div, data, label) {
+    $("#" + div).html("");
     var lines = [];
     for (var i = 0; i < label["value"].length; i++) {
         lines.push({
