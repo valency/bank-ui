@@ -3,7 +3,6 @@
     <?php include_once "lib.php"; ?>
     <title>云数慧金 - 金融数据一站式分析平台</title>
     <link rel="stylesheet" type="text/css" href="css/cust.css"/>
-    <script type="text/javascript" src="js/data.js"></script>
     <script type="text/javascript" src="js/cust.js"></script>
 </head>
 <body>

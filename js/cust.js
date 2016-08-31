@@ -4,31 +4,7 @@ $(document).ready(function () {
 });
 
 function draw_figures() {
-    // Configurations
-    var conf = [];
-    var input_cust_type = $("#input-cust-type").val();
-    if (input_cust_type != "") conf.push("residence = '" + input_cust_type + "'");
-    var input_cust_age = $("#input-cust-age").val();
-    if (input_cust_age != "") {
-        input_cust_age = input_cust_age.split(",");
-        conf.push("age BETWEEN " + input_cust_age[0] + " AND " + input_cust_age[1]);
-    }
-    var input_cust_member_year = $("#input-cust-member-year").val();
-    if (input_cust_member_year != "") {
-        input_cust_member_year = input_cust_member_year.split(",");
-        conf.push("years_registered BETWEEN " + input_cust_member_year[0] + " AND " + input_cust_member_year[1]);
-    }
-    var input_cust_daily_savings = $("#input-cust-daily-savings").val();
-    if (input_cust_daily_savings != "") {
-        input_cust_daily_savings = input_cust_daily_savings.split(",");
-        conf.push("avg_saving_all_time BETWEEN " + input_cust_daily_savings[0] + " AND " + input_cust_daily_savings[1]);
-    }
-    if ($("#check-cust-internet-bank").is(':checked')) conf.push("e_bank_id > 0");
-    if ($("#check-cust-mobile-bank").is(':checked')) conf.push("mobile_bank_id > 0");
-    if ($("#check-cust-wechat-bank").is(':checked')) conf.push("wechat_bank_id > 0");
-    if (conf.length > 0) conf = "WHERE " + conf.join(" AND ");
-    conf = "WHERE_CLAUSE = \"" + conf + "\"";
-    // Draw figures
+    var conf = get_conf();
     $("#chart-credit-card-count").html("Loading...");
     $.post(API_SERVER + "data/history/execute/", {
         report: API_LIST["credit_card_count"],
@@ -76,6 +52,33 @@ function draw_figures() {
             value: 1
         });
     });
+}
+
+function get_conf() {
+    var conf = [];
+    var input_cust_type = $("#input-cust-type").val();
+    if (input_cust_type != "") conf.push("residence = '" + input_cust_type + "'");
+    var input_cust_age = $("#input-cust-age").val();
+    if (input_cust_age != "") {
+        input_cust_age = input_cust_age.split(",");
+        conf.push("age BETWEEN " + input_cust_age[0] + " AND " + input_cust_age[1]);
+    }
+    var input_cust_member_year = $("#input-cust-member-year").val();
+    if (input_cust_member_year != "") {
+        input_cust_member_year = input_cust_member_year.split(",");
+        conf.push("years_registered BETWEEN " + input_cust_member_year[0] + " AND " + input_cust_member_year[1]);
+    }
+    var input_cust_daily_savings = $("#input-cust-daily-savings").val();
+    if (input_cust_daily_savings != "") {
+        input_cust_daily_savings = input_cust_daily_savings.split(",");
+        conf.push("avg_saving_all_time BETWEEN " + input_cust_daily_savings[0] + " AND " + input_cust_daily_savings[1]);
+    }
+    if ($("#check-cust-internet-bank").is(':checked')) conf.push("e_bank_id > 0");
+    if ($("#check-cust-mobile-bank").is(':checked')) conf.push("mobile_bank_id > 0");
+    if ($("#check-cust-wechat-bank").is(':checked')) conf.push("wechat_bank_id > 0");
+    if (conf.length > 0) conf = "WHERE " + conf.join(" AND ");
+    conf = "WHERE_CLAUSE = \"" + conf + "\"";
+    return conf;
 }
 
 function draw_chart_credit_card_count(div, data) {

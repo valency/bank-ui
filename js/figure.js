@@ -94,7 +94,7 @@ function draw_multi_line_chart(div, data, label) {
     var lines = [];
     for (var i = 0; i < label["value"].length; i++) {
         lines.push({
-            "balloonText": label["value"][i].capitalizeFirstLetter() + ": [[value]]",
+            "balloonText": label["text"][i] + ": [[value]]",
             "bullet": "round",
             "bulletSize": 8,
             "lineThickness": 2,
