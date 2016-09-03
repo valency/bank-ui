@@ -16,7 +16,7 @@
                     <div id="chart-age-dist"></div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top:30px;">
                 <div class="col-md-12 figure-container hidden">
                     <span class="chart-title">归属地统计分布</span>
                     <div id="chart-client-place"></div>
@@ -30,7 +30,7 @@
                     <div id="chart-member-year"></div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top:30px;">
                 <div class="col-md-12 figure-container hidden">
                     <span class="chart-title">性别统计分布</span>
                     <div id="chart-gender-dist"></div>
