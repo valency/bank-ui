@@ -1,9 +1,10 @@
 $(document).ready(function () {
     $(".nav a[href='query.php']").parent().addClass("active");
-    draw_figures();
 });
 
 function draw_figures() {
+    $(".figure-container").removeClass("hidden");
+    $(".result-container").removeClass("hidden");
     $("#chart-age-dist").html("Loading...");
     $.post(API_SERVER + "data/history/execute/", {
         report: API_LIST["age_hist"],

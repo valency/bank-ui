@@ -30,7 +30,7 @@ function draw_figures() {
         report: API_LIST["investment"],
         conf: ""
     }, function (data) {
-        draw_multi_line_chart("chart-investment", slice_date(eval(data["result"]), 5), {
+        draw_multi_line_chart("chart-investment", slice_date(eval(data["result"]), 4), {
             category: 0,
             value: [1, 2, 3, 4],
             text: ["gold_total", "silver_total", "portfolio_total", "fund_total"]

@@ -9,7 +9,7 @@
 <?php include_once "header.php"; ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <span class="chart-title">各类型信用卡持有 / 注销人数</span>
             <div id="chart-credit-card-count"></div>
         </div>
@@ -20,7 +20,7 @@
                     <div id="chart-age-dist"></div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top:30px;">
                 <div class="col-md-12">
                     <span class="chart-title">归属地统计分布</span>
                     <div id="chart-client-place"></div>
@@ -34,14 +34,14 @@
                     <div id="chart-daily-savings-dist"></div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top:30px;">
                 <div class="col-md-12">
                     <span class="chart-title">账户持有时间对应日均存款统计分布</span>
                     <div id="chart-member-year-vs-daily-savings"></div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group">
                 <label class="control-label" for="input-cust-type">客户类型细分</label>
                 <select class="form-control" id="input-cust-type">
